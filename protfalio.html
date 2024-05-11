@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+<style>
+    /* Global Styles */
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to left, #060606, #A11DCB, #94EBDA);
+    }
+    
+    /* Styles for div1 */
+    .div1 {
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 9999;
+    }
+    
+    .div1 a {
+        text-decoration: none;
+        color: #fff;
+        margin-left: 10px;
+    }
+    
+    .div1 button {
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        padding: 8px 16px;
+        transition: all 0.3s ease;
+    }
+    
+    .div1 button:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Styles for div2 */
+    .div2 {
+        position: relative;
+        text-align: center;
+        padding-top: 15vh;
+    }
+    
+    .div2 img {
+        position: relative;
+        border-radius: 50%;
+        border: 8px solid #fff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        z-index: 2;
+    }
+
+    /* Styles for smoky lights */
+    .smoky-light {
+        position: absolute;
+        background: radial-gradient(circle at 50% 50%, #ff0000, #ff7700, #ffff00, #00ff00, #00ffff, #0000ff, #8a2be2);
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        animation: flicker 2s infinite alternate;
+        pointer-events: none; /* Prevents the element from affecting cursor interactions */
+        z-index: 1;
+    }
+
+    @keyframes flicker {
+        0% {
+            transform: scale(1);
+            opacity: 0.8;
+        }
+        100% {
+            transform: scale(1.2);
+            opacity: 0.3;
+        }
+    }
+</style>
+</head>
+<body>
+    <!-- div1: Navigation Bar -->
+    <div class="div1">
+        <a href="portfolio.html"><button>Home</button></a>
+        <a href="aboutme.html"><button>About Me</button></a>
+        <a href="skills.html"><button>Skills</button></a>
+        <a href="certificates.html"><button>Certificates</button></a>
+    </div>
+
+    <!-- div2: Profile Image -->
+    <div class="div2">
+        <img src="D:\Sathwik\pic.png" width="300px" height="300px">
+    </div>
+
+    <!-- JavaScript for smoky lights -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const body = document.querySelector('body');
+            
+            body.addEventListener('mousemove', function(event) {
+                const smoke = document.createElement('div');
+                smoke.classList.add('smoky-light');
+                smoke.style.top = event.clientY + 'px';
+                smoke.style.left = event.clientX + 'px';
+                body.appendChild(smoke);
+                
+                setTimeout(function() {
+                    smoke.remove();
+                }, 2000); // Remove smoky light after 2 seconds
+            });
+        });
+    </script>
+</body>
+</html>

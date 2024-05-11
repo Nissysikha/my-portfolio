@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Educational Qualifications</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to left, #060606, #A11DCB, #94EBDA);
+        color: #fff;
+    }
+    
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        border: 1px solid #fff;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+        color: #000;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h2>PROFILE</h2>
+        <p>Passionate IT student with skills in programming, networking, and systems administration. Excited to contribute to innovative IT projects and thrive in a dynamic, collaborative environment.</p>
+        <h2>Educational Qualifications</h2>
+        <table>
+            <tr>
+                <th>S.No</th>
+                <th>Qualification</th>
+                <th>Institute</th>
+                <th>Board</th>
+                <th>Year</th>
+                <th>%/CGPA</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>B.Tech (Information Technology)</td>
+                <td>VRSEC (Velagapudi Ramakrishna Siddhartha Engineering College), Vijayawada</td>
+                <td>JNTU, Kakinada</td>
+                <td>2021-</td>
+                <td>8.35</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Intermediate</td>
+                <td>Narayana Junior College</td>
+                <td>Board of Intermediate Education, AP</td>
+                <td>2019-2021</td>
+                <td>95%</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>SSC</td>
+                <td>Kendriya Vidyalaya</td>
+                <td>Central Board of Secondary Education, AP</td>
+                <td>2019</td>
+                <td>80%</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- JavaScript for smoky lights -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const body = document.querySelector('body');
+            
+            body.addEventListener('mousemove', function(event) {
+                const smoke = document.createElement('div');
+                smoke.classList.add('smoky-light');
+                smoke.style.top = event.clientY + 'px';
+                smoke.style.left = event.clientX + 'px';
+                body.appendChild(smoke);
+                
+                setTimeout(function() {
+                    smoke.remove();
+                }, 2000); // Remove smoky light after 2 seconds
+            });
+        });
+    </script>
+</body>
+</html>
